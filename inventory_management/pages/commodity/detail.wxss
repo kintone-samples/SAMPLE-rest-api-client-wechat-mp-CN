@@ -1,0 +1,12 @@
+.image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.weui-form-preview__value_in-hd {
+  font-size: 26px;
+}
+
+.weui-form-preview__btn {
+  font-weight: 700;
+}

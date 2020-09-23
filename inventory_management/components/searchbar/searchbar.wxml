@@ -1,0 +1,28 @@
+<view class="weui-search-bar__with-btn">
+    <view class="weui-search-bar {{searchState ? 'weui-search-bar_focusing' : ''}}">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search" type="search"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="{{placeholder}}" value="{{value}}" focus="{{focus}}" bindblur="inputBlur" bindfocus="inputFocus" bindinput="inputChange" />
+                <text class="weui-icon-clear" hover-class="weui-active" wx:if="{{value.length > 0}}" bindtap="clearInput"></text>
+            </view>
+            <label class="weui-search-bar__label" bindtap="showInput">
+                <icon class="weui-icon-search" type="search"></icon>
+                <text class="weui-search-bar__text">{{placeholder}}</text>
+            </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" bindtap="search">{{confirmText}}</view>
+    </view>
+    <button type="default" size="mini" bindtap="buttonTap">{{buttonText}}</button>
+</view>
+<mp-cells ext-class="searchbar-result" wx:if="{{result.length > 0}}">
+    <mp-slideview ext-class="{{index % 2 === 0 ? 'lineTwo' : 'lineOne'}}" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-index="{{index}}" wx:for="{{result}}" wx:key="unique">
+        <mp-cell bindtap="selectResult" data-index="{{index}}" hover>
+            <view class="weui-flex {{idx === 0 ? 'searchbar-result-cell__first-view' : ''}} " wx:for="{{item.record}}" wx:key="i" wx:for-item="line" wx:for-index="idx">
+                <view class="weui-flex__item {{idx === 0 && fi === 0 ? 'searchbar-result__bold' : ''}}" wx:for="{{line}}" wx:key="j" wx:for-item="flexItem" wx:for-index="fi">
+                    {{flexItem}}
+                </view>
+            </view>
+        </mp-cell>
+    </mp-slideview>
+</mp-cells>

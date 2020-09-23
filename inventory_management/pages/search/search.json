@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "mp-searchbar": "../../components/searchbar/searchbar",
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "商品列表",
+  "navigationBarTextStyle": "black"
+}
